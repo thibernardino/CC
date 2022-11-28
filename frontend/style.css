@@ -177,6 +177,7 @@ footer {
   flex-wrap: wrap;
   padding-top: 1rem;
 }
+
 .details-image {
   flex: 2 1 60rem;
 }
@@ -184,6 +185,7 @@ footer {
   max-width: 60rem;
   width: 100%;
 }
+
 .details-info,
 .details-action {
   flex: 1 1 30rem;

@@ -6,7 +6,7 @@ import {
   showMessage,
   rerender,
 } from "../utils";
-import { deliverOrder, getOrder, getPaypalClientId, payOrder } from "../api";
+import { deliverOrder, getOrder, getPaypalClientId, payOrder } from "../api original";
 import { getUserInfo } from "../localStorage";
 
 const addPaypalSdk = async (totalPrice) => {
@@ -60,7 +60,7 @@ const handlePayment = (clientId, totalPrice) => {
             paymentID: data.paymentID,
           });
           hideLoading();
-          showMessage("Payment was successfull.", () => {
+          showMessage("Le paiement a réussi.", () => {
             rerender(OrderScreen);
           });
         });
@@ -187,3 +187,5 @@ const OrderScreen = {
   },
 };
 export default OrderScreen;
+
+
