@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-alert */
 import DashboardMenu from "../components/DashboardMenu";
 import { getProducts, createProduct, deleteProduct } from "../api";
 import { showLoading, hideLoading, rerender, showMessage } from "../utils";

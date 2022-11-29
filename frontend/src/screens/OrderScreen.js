@@ -6,7 +6,7 @@ import {
   showMessage,
   rerender,
 } from "../utils";
-import { deliverOrder, getOrder, getPaypalClientId, payOrder } from "../api original";
+import { deliverOrder, getOrder, getPaypalClientId, payOrder } from "../api";
 import { getUserInfo } from "../localStorage";
 
 const addPaypalSdk = async (totalPrice) => {
