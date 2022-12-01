@@ -20,8 +20,8 @@ mongoose
   .catch((err) => {
     console.log(err.message);
   });
-
 const app = express();
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use("/api/uploads", uploadRouter);

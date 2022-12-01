@@ -11,8 +11,8 @@ userRouter.get(
     try {
       const user = new User({
         name: 'admin',
-        email: 'thiago@example.com',
-        password: 'bbdc',
+        email: 'admin@example.com',
+        password: 'jsamazona',
         isAdmin: true,
       });
       const createdUser = await user.save();
@@ -22,7 +22,6 @@ userRouter.get(
     }
   })
 );
-
 userRouter.post(
   '/signin',
   expressAsyncHandler(async (req, res) => {
@@ -32,7 +31,7 @@ userRouter.post(
     });
     if (!signinUser) {
       res.status(401).send({
-        message: 'E-mail ou mot de passe incorrect.',
+        message: 'Invalid Email or Password',
       });
     } else {
       res.send({
@@ -45,7 +44,6 @@ userRouter.post(
     }
   })
 );
-
 userRouter.post(
   '/register',
   expressAsyncHandler(async (req, res) => {
@@ -57,7 +55,7 @@ userRouter.post(
     const createdUser = await user.save();
     if (!createdUser) {
       res.status(401).send({
-        message: 'Données utilisateur invalides',
+        message: 'Invalid User Data',
       });
     } else {
       res.send({
@@ -70,7 +68,6 @@ userRouter.post(
     }
   })
 );
-
 userRouter.put(
   '/:id',
   isAuth,
@@ -79,7 +76,7 @@ userRouter.put(
 
     if (!user) {
       res.status(404).send({
-        message: 'Utilisateur non trouvé.',
+        message: 'User Not Found',
       });
     } else {
       user.name = req.body.name || user.name;
@@ -96,5 +93,4 @@ userRouter.put(
     }
   })
 );
-
 export default userRouter;

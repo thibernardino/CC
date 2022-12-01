@@ -7,70 +7,62 @@ exports.default = void 0;
 var _default = {
   products: [{
     _id: '111111111111111111111111',
-    name: 'Kit 1',
-    category: 'kit',
+    name: 'Hiskywin Full Zip Running Shirts Thermal Workout',
+    category: 'Shirts',
     image: '/images/product-1.jpg',
-    price: 10,
-    type: 'own',
+    price: 59,
+    brand: 'Hiskywin',
     rating: 4.5,
     numReviews: 10,
-    countInStock: 1,
-    description: 'Quelque chose'
+    countInStock: 6
   }, {
-    _id: '222222222222222222222222',
-    name: 'Kit 2',
-    category: 'kit',
-    image: '/images/product-1.jpg',
-    price: 20,
-    type: 'own',
-    rating: 4.5,
-    numReviews: 15,
-    countInStock: 2,
-    description: 'Quelque chose'
+    _id: '2',
+    name: 'Nike Full-Zip Hoodie Mens Workout Sweatshirt',
+    category: 'Shirts',
+    image: '/images/product-2.jpg',
+    price: 70,
+    brand: 'Nike',
+    rating: 5,
+    numReviews: 51
   }, {
     _id: '3',
-    name: 'Kit 3',
-    category: 'kit',
-    image: '/images/product-4.jpg',
-    price: 30,
-    type: 'own',
-    rating: 4.5,
-    numReviews: 15,
-    countInStock: 3,
-    description: 'Quelque chose'
+    name: 'Adidas Mens Long Sleeve Hoodie',
+    category: 'Shirts',
+    image: '/images/product-3.jpg',
+    price: 59,
+    brand: 'Adidas',
+    rating: 4,
+    numReviews: 45
   }, {
     _id: '4',
-    name: 'Kit 4',
-    category: 'kit',
+    name: 'Under Armour Mens Sportstyle Tricot Joggers',
+    category: 'Pants',
     image: '/images/product-4.jpg',
-    price: 40,
-    type: 'own',
-    rating: 4.5,
-    numReviews: 19,
-    countInStock: 4,
-    description: 'Quelque chose'
+    price: 90,
+    brand: 'Under Armour',
+    rating: 2.5,
+    numReviews: 198,
+    countInStock: 6
   }, {
     _id: '5',
-    name: 'Kit 5',
-    category: 'kit',
+    name: 'Champion Mens Graphic Powerblend Fleece Jogger',
+    category: 'Pants',
     image: '/images/product-5.jpg',
-    price: 50,
-    type: 'own',
-    rating: 4.5,
-    numReviews: 13,
-    countInStock: 5,
-    description: 'Quelque chose'
+    price: 119,
+    brand: 'Champion',
+    rating: 3.5,
+    numReviews: 89,
+    countInStock: 6
   }, {
     _id: '6',
-    name: 'Kit 6',
-    category: 'kit',
+    name: 'Aelfric Eden Mens Joggers Pants Long Multi-Pockets',
+    category: 'Pants',
     image: '/images/product-6.jpg',
-    price: 60,
-    type: 'own',
+    price: 85,
+    brand: 'Aelfric Eden',
     rating: 4.5,
-    numReviews: 11,
-    countInStock: 6,
-    description: 'Quelque chose'
+    numReviews: 45,
+    countInStock: 6
   }]
 };
 exports.default = _default;

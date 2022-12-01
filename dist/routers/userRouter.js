@@ -14,8 +14,8 @@ userRouter.get('/createadmin', (0, _expressAsyncHandler.default)(async (req, res
   try {
     const user = new _userModel.default({
       name: 'admin',
-      email: 'thiago@example.com',
-      password: 'bbdc',
+      email: 'admin@example.com',
+      password: 'jsamazona',
       isAdmin: true
     });
     const createdUser = await user.save();
@@ -33,7 +33,7 @@ userRouter.post('/signin', (0, _expressAsyncHandler.default)(async (req, res) =>
   });
   if (!signinUser) {
     res.status(401).send({
-      message: 'E-mail ou mot de passe incorrect.'
+      message: 'Invalid Email or Password'
     });
   } else {
     res.send({
@@ -54,7 +54,7 @@ userRouter.post('/register', (0, _expressAsyncHandler.default)(async (req, res) 
   const createdUser = await user.save();
   if (!createdUser) {
     res.status(401).send({
-      message: 'Données utilisateur invalides'
+      message: 'Invalid User Data'
     });
   } else {
     res.send({
@@ -70,7 +70,7 @@ userRouter.put('/:id', _utils.isAuth, (0, _expressAsyncHandler.default)(async (r
   const user = await _userModel.default.findById(req.params.id);
   if (!user) {
     res.status(404).send({
-      message: 'Utilisateur non trouvé.'
+      message: 'User Not Found'
     });
   } else {
     user.name = req.body.name || user.name;

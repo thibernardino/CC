@@ -5,9 +5,7 @@ import Order from '../models/orderModel';
 import User from '../models/userModel';
 import Product from '../models/productModel';
 
-
 const orderRouter = express.Router();
-
 orderRouter.get(
   '/summary',
   isAuth,
@@ -55,7 +53,6 @@ orderRouter.get(
     });
   })
 );
-
 orderRouter.get(
   '/',
   isAuth,
@@ -73,8 +70,7 @@ orderRouter.get(
     const orders = await Order.find({ user: req.user._id });
     res.send(orders);
   })
-)
-
+);
 orderRouter.get(
   '/:id',
   isAuth,
@@ -83,11 +79,10 @@ orderRouter.get(
     if (order) {
       res.send(order);
     } else {
-      res.status(404).send({ message: 'Commande introuvable.' });
+      res.status(404).send({ message: 'Order Not Found' });
     }
   })
 );
-
 orderRouter.post(
   '/',
   isAuth,
@@ -103,10 +98,9 @@ orderRouter.post(
       totalPrice: req.body.totalPrice,
     });
     const createdOrder = await order.save();
-    res.status(201).send({ message: 'Nouvelle commande créée', order: createdOrder });
+    res.status(201).send({ message: 'New Order Created', order: createdOrder });
   })
 );
-
 orderRouter.delete(
   '/:id',
   isAuth,

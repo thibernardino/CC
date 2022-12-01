@@ -82,7 +82,7 @@ orderRouter.get('/:id', _utils.isAuth, (0, _expressAsyncHandler.default)(async (
     res.send(order);
   } else {
     res.status(404).send({
-      message: 'Commande introuvable.'
+      message: 'Order Not Found'
     });
   }
 }));
@@ -99,7 +99,7 @@ orderRouter.post('/', _utils.isAuth, (0, _expressAsyncHandler.default)(async (re
   });
   const createdOrder = await order.save();
   res.status(201).send({
-    message: 'Nouvelle commande créée',
+    message: 'New Order Created',
     order: createdOrder
   });
 }));

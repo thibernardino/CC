@@ -18,14 +18,14 @@ const isAuth = (req, res, next) => {
   const bearerToken = req.headers.authorization;
   if (!bearerToken) {
     res.status(401).send({
-      message: "Token is not supplied"
+      message: 'Token is not supplied'
     });
   } else {
     const token = bearerToken.slice(7, bearerToken.length);
     _jsonwebtoken.default.verify(token, _config.default.JWT_SECRET, (err, data) => {
       if (err) {
         res.status(401).send({
-          message: "Invalid Token"
+          message: 'Invalid Token'
         });
       } else {
         req.user = data;
@@ -40,7 +40,7 @@ const isAdmin = (req, res, next) => {
     next();
   } else {
     res.status(401).send({
-      message: "Token is not valid for admin user"
+      message: 'Token is not valid for admin user'
     });
   }
 };

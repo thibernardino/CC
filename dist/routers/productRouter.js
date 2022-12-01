@@ -28,21 +28,21 @@ productRouter.get('/:id', (0, _expressAsyncHandler.default)(async (req, res) => 
 }));
 productRouter.post('/', _utils.isAuth, _utils.isAdmin, (0, _expressAsyncHandler.default)(async (req, res) => {
   const product = new _productModel.default({
-    name: 'nom du produit',
-    description: 'description',
-    category: 'catégorie',
-    brand: 'marque',
+    name: 'sample product',
+    description: 'sample desc',
+    category: 'sample category',
+    brand: 'sample brand',
     image: '/images/product-1.jpg'
   });
   const createdProduct = await product.save();
   if (createdProduct) {
     res.status(201).send({
-      message: 'Produit créé',
+      message: 'Product Created',
       product: createdProduct
     });
   } else {
     res.status(500).send({
-      message: 'Erreur lors de la création du produit'
+      message: 'Error in creating product'
     });
   }
 }));
@@ -60,17 +60,17 @@ productRouter.put('/:id', _utils.isAuth, _utils.isAdmin, (0, _expressAsyncHandle
     const updatedProduct = await product.save();
     if (updatedProduct) {
       res.send({
-        message: 'Produit mis à jour',
+        message: 'Product Updated',
         product: updatedProduct
       });
     } else {
       res.status(500).send({
-        message: 'Erreur lors de la mise à jour du produit'
+        message: 'Error in updaing product'
       });
     }
   } else {
     res.status(404).send({
-      message: 'Produit non trouvé'
+      message: 'Product Not Found'
     });
   }
 }));
@@ -79,12 +79,12 @@ productRouter.delete('/:id', _utils.isAuth, _utils.isAdmin, (0, _expressAsyncHan
   if (product) {
     const deletedProduct = await product.remove();
     res.send({
-      message: 'Produit supprimé',
+      message: 'Product Deleted',
       product: deletedProduct
     });
   } else {
     res.status(404).send({
-      message: 'Produit non trouvé'
+      message: 'Product Not Found'
     });
   }
 }));
@@ -102,7 +102,7 @@ productRouter.post('/:id/reviews', _utils.isAuth, (0, _expressAsyncHandler.defau
     product.numReviews = product.reviews.length;
     const updatedProduct = await product.save();
     res.status(201).send({
-      message: 'Commentaire créé.',
+      message: 'Comment Created.',
       data: updatedProduct.reviews[updatedProduct.reviews.length - 1]
     });
   } else {

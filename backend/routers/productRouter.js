@@ -26,25 +26,26 @@ productRouter.get(
     res.send(product);
   })
 );
+
 productRouter.post(
   '/',
   isAuth,
   isAdmin,
   expressAsyncHandler(async (req, res) => {
     const product = new Product({
-      name: 'nom du produit',
-      description: 'description',
-      category: 'catégorie',
-      brand: 'marque',
+      name: 'sample product',
+      description: 'sample desc',
+      category: 'sample category',
+      brand: 'sample brand',
       image: '/images/product-1.jpg',
     });
     const createdProduct = await product.save();
     if (createdProduct) {
       res
         .status(201)
-        .send({ message: 'Produit créé', product: createdProduct });
+        .send({ message: 'Product Created', product: createdProduct });
     } else {
-      res.status(500).send({ message: 'Erreur lors de la création du produit' });
+      res.status(500).send({ message: 'Error in creating product' });
     }
   })
 );
@@ -65,12 +66,12 @@ productRouter.put(
       product.description = req.body.description;
       const updatedProduct = await product.save();
       if (updatedProduct) {
-        res.send({ message: 'Produit mis à jour', product: updatedProduct });
+        res.send({ message: 'Product Updated', product: updatedProduct });
       } else {
-        res.status(500).send({ message: 'Erreur lors de la mise à jour du produit' });
+        res.status(500).send({ message: 'Error in updaing product' });
       }
     } else {
-      res.status(404).send({ message: 'Produit non trouvé' });
+      res.status(404).send({ message: 'Product Not Found' });
     }
   })
 );
@@ -82,12 +83,13 @@ productRouter.delete(
     const product = await Product.findById(req.params.id);
     if (product) {
       const deletedProduct = await product.remove();
-      res.send({ message: 'Produit supprimé', product: deletedProduct });
+      res.send({ message: 'Product Deleted', product: deletedProduct });
     } else {
-      res.status(404).send({ message: 'Produit non trouvé' });
+      res.status(404).send({ message: 'Product Not Found' });
     }
   })
 );
+
 productRouter.post(
   '/:id/reviews',
   isAuth,
@@ -107,7 +109,7 @@ productRouter.post(
       product.numReviews = product.reviews.length;
       const updatedProduct = await product.save();
       res.status(201).send({
-        message: 'Commentaire créé.',
+        message: 'Comment Created.',
         data: updatedProduct.reviews[updatedProduct.reviews.length - 1],
       });
     } else {
